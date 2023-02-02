@@ -1,0 +1,296 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="__MigrationHistory">
+    <Key>
+      <PropertyRef Name="MigrationId" />
+      <PropertyRef Name="ContextKey" />
+    </Key>
+    <Property Name="MigrationId" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="ContextKey" Type="nvarchar" MaxLength="300" Nullable="false" />
+    <Property Name="Model" Type="varbinary(max)" Nullable="false" />
+    <Property Name="ProductVersion" Type="nvarchar" MaxLength="32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AspNetRoles">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="256" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AspNetUserClaims">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="ClaimType" Type="nvarchar(max)" />
+    <Property Name="ClaimValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="AspNetUserLogins">
+    <Key>
+      <PropertyRef Name="LoginProvider" />
+      <PropertyRef Name="ProviderKey" />
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="LoginProvider" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="ProviderKey" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AspNetUserRoles">
+    <Key>
+      <PropertyRef Name="UserId" />
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="RoleId" Type="nvarchar" MaxLength="128" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AspNetUsers">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="Email" Type="nvarchar" MaxLength="256" />
+    <Property Name="EmailConfirmed" Type="bit" Nullable="false" />
+    <Property Name="PasswordHash" Type="nvarchar(max)" />
+    <Property Name="SecurityStamp" Type="nvarchar(max)" />
+    <Property Name="PhoneNumber" Type="nvarchar(max)" />
+    <Property Name="PhoneNumberConfirmed" Type="bit" Nullable="false" />
+    <Property Name="TwoFactorEnabled" Type="bit" Nullable="false" />
+    <Property Name="LockoutEndDateUtc" Type="datetime" />
+    <Property Name="LockoutEnabled" Type="bit" Nullable="false" />
+    <Property Name="AccessFailedCount" Type="int" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar" MaxLength="256" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Campaigns">
+    <Key>
+      <PropertyRef Name="Id_campaigns" />
+    </Key>
+    <Property Name="Id_campaigns" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name_campaigns" Type="varchar" MaxLength="50" />
+    <Property Name="Details" Type="varchar(max)" />
+    <Property Name="Image_campaigns" Type="varchar" MaxLength="250" />
+    <Property Name="Target_campaigns" Type="int" />
+  </EntityType>
+  <EntityType Name="City">
+    <Key>
+      <PropertyRef Name="Id_city" />
+    </Key>
+    <Property Name="Id_city" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="City_name" Type="varchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="Contact">
+    <Key>
+      <PropertyRef Name="Id_contact" />
+    </Key>
+    <Property Name="Id_contact" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Full_name" Type="varchar" MaxLength="50" />
+    <Property Name="Email" Type="varchar" MaxLength="250" />
+    <Property Name="Phone" Type="numeric" Precision="10" Scale="0" />
+    <Property Name="Message_contact" Type="varchar" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="Direct_Donation">
+    <Key>
+      <PropertyRef Name="Id_direct" />
+    </Key>
+    <Property Name="Id_direct" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Full_name" Type="varchar" MaxLength="50" />
+    <Property Name="Phone" Type="numeric" Precision="10" Scale="0" />
+    <Property Name="City" Type="varchar" MaxLength="50" />
+    <Property Name="Street" Type="varchar" MaxLength="150" />
+    <Property Name="Donation_date" Type="date" />
+    <Property Name="Quantity" Type="int" />
+    <Property Name="Details" Type="varchar" MaxLength="250" />
+    <Property Name="state" Type="int" />
+    <Property Name="Email" Type="varchar" MaxLength="50" />
+    <Property Name="taken" Type="int" />
+    <Property Name="Id_campaigns" Type="int" />
+  </EntityType>
+  <EntityType Name="Money_Donation">
+    <Key>
+      <PropertyRef Name="Id_money" />
+    </Key>
+    <Property Name="Id_money" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Full_name" Type="varchar" MaxLength="50" />
+    <Property Name="Phone" Type="numeric" Precision="10" Scale="0" />
+    <Property Name="Amount" Type="int" />
+  </EntityType>
+  <EntityType Name="Partners">
+    <Key>
+      <PropertyRef Name="Id_partners" />
+    </Key>
+    <Property Name="Id_partners" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name_partners" Type="varchar" MaxLength="100" />
+    <Property Name="National_number" Type="numeric" Precision="10" Scale="0" />
+    <Property Name="Year_partners" Type="date" />
+    <Property Name="Description_partners" Type="varchar(max)" />
+    <Property Name="state" Type="int" />
+    <Property Name="Id" Type="nvarchar" MaxLength="128" />
+    <Property Name="Email" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Recommendation">
+    <Key>
+      <PropertyRef Name="Id_recommendation" />
+    </Key>
+    <Property Name="Id_recommendation" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Address_recommendation" Type="varchar" MaxLength="250" />
+    <Property Name="Phone" Type="numeric" Precision="10" Scale="0" />
+    <Property Name="Details" Type="varchar" MaxLength="250" />
+    <Property Name="members" Type="int" />
+    <Property Name="workers" Type="int" />
+    <Property Name="fixed_income" Type="int" />
+    <Property Name="name" Type="varchar" MaxLength="50" />
+    <Property Name="city" Type="int" />
+    <Property Name="done_rec" Type="int" />
+  </EntityType>
+  <EntityType Name="Volunteer">
+    <Key>
+      <PropertyRef Name="Id_volunteer" />
+    </Key>
+    <Property Name="Id_volunteer" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Phone" Type="numeric" Precision="10" Scale="0" />
+    <Property Name="Full_name" Type="varchar" MaxLength="50" />
+    <Property Name="City" Type="varchar" MaxLength="50" />
+    <Property Name="Street" Type="varchar" MaxLength="150" />
+    <Property Name="Details" Type="varchar" MaxLength="250" />
+    <Property Name="Academic_degree" Type="varchar" MaxLength="250" />
+    <Property Name="State_volunteer" Type="int" />
+    <Property Name="Email" Type="varchar" MaxLength="50" />
+    <Property Name="Id" Type="nvarchar" MaxLength="128" />
+  </EntityType>
+  <Association Name="FK__Direct_Do__Id_ca__498EEC8D">
+    <End Role="Campaigns" Type="Self.Campaigns" Multiplicity="0..1" />
+    <End Role="Direct_Donation" Type="Self.Direct_Donation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Campaigns">
+        <PropertyRef Name="Id_campaigns" />
+      </Principal>
+      <Dependent Role="Direct_Donation">
+        <PropertyRef Name="Id_campaigns" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Partners__Id__339FAB6E">
+    <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="0..1" />
+    <End Role="Partners" Type="Self.Partners" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Partners">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Volunteer__Id__2FCF1A8A">
+    <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="0..1" />
+    <End Role="Volunteer" Type="Self.Volunteer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Volunteer">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+    <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AspNetUserClaims" Type="Self.AspNetUserClaims" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserClaims">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+    <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AspNetUserLogins" Type="Self.AspNetUserLogins" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserLogins">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId">
+    <End Role="AspNetRoles" Type="Self.AspNetRoles" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AspNetUserRoles" Type="Self.AspNetUserRoles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetRoles">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserRoles">
+        <PropertyRef Name="RoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId">
+    <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AspNetUserRoles" Type="Self.AspNetUserRoles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserRoles">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ModelStoreContainer">
+    <EntitySet Name="__MigrationHistory" EntityType="Self.__MigrationHistory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AspNetRoles" EntityType="Self.AspNetRoles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AspNetUserClaims" EntityType="Self.AspNetUserClaims" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AspNetUserLogins" EntityType="Self.AspNetUserLogins" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AspNetUserRoles" EntityType="Self.AspNetUserRoles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AspNetUsers" EntityType="Self.AspNetUsers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Campaigns" EntityType="Self.Campaigns" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="City" EntityType="Self.City" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Contact" EntityType="Self.Contact" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Direct_Donation" EntityType="Self.Direct_Donation" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Money_Donation" EntityType="Self.Money_Donation" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Partners" EntityType="Self.Partners" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Recommendation" EntityType="Self.Recommendation" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Volunteer" EntityType="Self.Volunteer" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__Direct_Do__Id_ca__498EEC8D" Association="Self.FK__Direct_Do__Id_ca__498EEC8D">
+      <End Role="Campaigns" EntitySet="Campaigns" />
+      <End Role="Direct_Donation" EntitySet="Direct_Donation" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Partners__Id__339FAB6E" Association="Self.FK__Partners__Id__339FAB6E">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="Partners" EntitySet="Partners" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Volunteer__Id__2FCF1A8A" Association="Self.FK__Volunteer__Id__2FCF1A8A">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="Volunteer" EntitySet="Volunteer" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="AspNetUserClaims" EntitySet="AspNetUserClaims" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="AspNetUserLogins" EntitySet="AspNetUserLogins" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId" Association="Self.FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId">
+      <End Role="AspNetRoles" EntitySet="AspNetRoles" />
+      <End Role="AspNetUserRoles" EntitySet="AspNetUserRoles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="AspNetUserRoles" EntitySet="AspNetUserRoles" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

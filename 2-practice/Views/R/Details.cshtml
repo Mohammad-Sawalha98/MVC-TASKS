@@ -1,0 +1,90 @@
+﻿@model _2_practice.Models.Recommendation
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Recommendation</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Address_recommendation)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Address_recommendation)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Phone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Phone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Details)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Details)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.members)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.members)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.workers)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.workers)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.fixed_income)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fixed_income)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.city)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.city)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.done_rec)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.done_rec)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id_recommendation }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,81 @@
+﻿@model IEnumerable<_2_practice.Models.Recommendation>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Address_recommendation)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Phone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Details)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.members)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.workers)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fixed_income)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.city)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.done_rec)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Address_recommendation)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Phone)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Details)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.members)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.workers)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fixed_income)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.city)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.done_rec)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id_recommendation }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id_recommendation }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id_recommendation })
+        </td>
+    </tr>
+}
+
+</table>
