@@ -1,0 +1,36 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+@Html.Label("Name", new
+{
+    @class = "form-control",
+
+})
+
+@Html.TextBox("FirstName", "", new
+{
+    @class = "form-control",
+    @PlaceHolder = "FirstName",
+    style = "background-color:gray , color:white",
+    title = "Please write your name",
+
+})
+<br /> <br />
+
+@Html.Label("Email", new
+{
+    @class = "form-control",
+
+})
+
+@Html.TextBox("Email", "", new
+{
+    @class = "form-control",
+    @PlaceHolder = "Email",
+    style = "background-color:gray , color:white",
+    title = "Please write your Email",
+
+})
+<br /> <br />
+@Html.CheckBox("language")

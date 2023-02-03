@@ -42,9 +42,13 @@
             @Html.DisplayFor(modelItem => item.Category.CategoryName)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ProductID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ProductID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ProductID })
+            @Html.ActionLink("Edit", "Edit", new { id=item.ProductID }, new {@class="btn btn-warning"} ) |
+            @Html.ActionLink("Details", "Details", new { id=item.ProductID }, new {@class = "btn btn-dark" }) |
+            @*@Html.ActionLink("Delete", "Delete", new { id=item.ProductID } , new {@class = "btn btn-danger" })*@
+            <a href="@Url.Action("Delete" , "ProductsController" , new {id=item.ProductID})" class="btn btn-danger" >
+                <span class="glyphicon glyphicon-remove"></span>
+                Delete
+            </a>
         </td>
     </tr>
 }
