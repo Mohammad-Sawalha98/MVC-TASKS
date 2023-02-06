@@ -16,8 +16,9 @@ namespace Task1_2_Feb.Models
     public partial class info
     {
         public int id { get; set; }
-        [Required (ErrorMessage ="Required First Name")]
-        [Display(Name ="First Name")]
+        
+        [Required(ErrorMessage = "Required First Name")]
+        [Display(Name = "First Name")]
         [StringLength(12)]
         public string First_Name { get; set; }
 
@@ -33,11 +34,16 @@ namespace Task1_2_Feb.Models
         [Required]
         [RegularExpression("((079)|(078)|(077)){1}[0-9]{7}", ErrorMessage = "Number must be Joirdanian")]
         public string Phone { get; set; }
-        [Range(18,50)]
+
+        [Range(18, 50, ErrorMessage = "Required Age")]
+        [Required]
         public Nullable<int> Age { get; set; }
+
         [Display(Name = "Job Title")]
         public string Job_Title { get; set; }
 
         public Nullable<bool> Gender { get; set; }
+        public string Image { get; set; }
+        public string CV { get; set; }
     }
 }

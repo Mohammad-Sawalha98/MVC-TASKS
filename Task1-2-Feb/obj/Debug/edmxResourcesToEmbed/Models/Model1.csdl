@@ -1,5 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="EntitiesTask" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="infoes" EntityType="Model.info" />
+  </EntityContainer>
   <EntityType Name="info">
     <Key>
       <PropertyRef Name="id" />
@@ -12,8 +15,7 @@
     <Property Name="Age" Type="Int32" />
     <Property Name="Job_Title" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
     <Property Name="Gender" Type="Boolean" />
+    <Property Name="Image" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="CV" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
   </EntityType>
-  <EntityContainer Name="EntitiesTask" annotation:LazyLoadingEnabled="true">
-    <EntitySet Name="infoes" EntityType="Self.info" />
-  </EntityContainer>
 </Schema>

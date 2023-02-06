@@ -1,0 +1,6 @@
+  our_camp.Style["background-image"] = "url(\"/img/back.jpg\")"; // background img using c#
+            our_camp.Style["background-size"] = "cover";
+            our_camp.Style["background-repeat"] = "no-repeat";
+            our_camp.Style["Font-size"] = "small";
+            our_camp.Style["padding"] = "15px";
+            our_camp.Style["padding-bottom"] = "300px";

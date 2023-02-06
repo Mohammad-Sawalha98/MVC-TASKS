@@ -7,85 +7,115 @@
 <h2>Create</h2>
 
 
-@using (Html.BeginForm()) 
-{
-    @Html.AntiForgeryToken()
-    
-    <div class="form-horizontal">
-        <h4>info</h4>
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <div class="form-group">
-            @Html.LabelFor(model => model.First_Name, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.First_Name, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.First_Name, "", new { @class = "text-danger" })
-            </div>
+<form action="/infoes/Create" method="post" enctype="multipart/form-data">
+    <input name="__RequestVerificationToken" type="hidden" value="EohFTK3_Q4GBmWFFcC9SLY-lglrgxhyiFV0QFRbQTBNi3qOKV56JXtCTPyVbaWnRfgX4otwGKlB067geylcL2BQ2Rwc8WxkkevJq5MAVsBM1" />    <div class="form-horizontal">
+    <h4>info</h4>
+    <hr />
+
+    <div class="form-group">
+        <label class="control-label col-md-2" for="First_Name">First Name</label>
+        <div class="col-md-10">
+            <input class="form-control text-box single-line" data-val="true" data-val-length="The field First Name must be a string with a maximum length of 12." data-val-length-max="12" data-val-required="Required First Name" id="F_Name" name="First_Name" type="text" value="" />
+            <span class="field-validation-valid text-danger" data-valmsg-for="First_Name" data-valmsg-replace="true"></span>
         </div>
+    </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Last_Name, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Last_Name, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Last_Name, "", new { @class = "text-danger" })
-            </div>
+    <div class="form-group">
+        <label class="control-label col-md-2" for="Last_Name">Last Name</label>
+        <div class="col-md-10">
+            <input class="form-control text-box single-line" data-val="true" data-val-length="The field Last Name must be a string with a maximum length of 12." data-val-length-max="12" data-val-required="Required Last Name" id="Last_Name" name="Last_Name" type="text" value="" />
+            <span class="field-validation-valid text-danger" data-valmsg-for="Last_Name" data-valmsg-replace="true"></span>
         </div>
+    </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.E_mail, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.E_mail, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.E_mail, "", new { @class = "text-danger" })
-            </div>
+    <div class="form-group">
+        <label class="control-label col-md-2" for="E_mail">Email</label>
+        <div class="col-md-10">
+            <input class="form-control text-box single-line" data-val="true" data-val-email="The Email field is not a valid e-mail address." data-val-required="Required Email" id="E_mail" name="E_mail" type="email" value="" />
+            <span class="field-validation-valid text-danger" data-valmsg-for="E_mail" data-valmsg-replace="true"></span>
         </div>
+    </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Phone, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Phone, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Phone, "", new { @class = "text-danger" })
-            </div>
+    <div class="form-group">
+        <label class="control-label col-md-2" for="Phone">Phone</label>
+        <div class="col-md-10">
+            <input class="form-control text-box single-line" data-val="true" data-val-regex="Number must be Joirdanian" data-val-regex-pattern="((079)|(078)|(077)){1}[0-9]{7}" data-val-required="The Phone field is required." id="Phone" name="Phone" type="text" value="" />
+            <span class="field-validation-valid text-danger" data-valmsg-for="Phone" data-valmsg-replace="true"></span>
         </div>
+    </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Age, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Age, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Age, "", new { @class = "text-danger" })
-            </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-2" for="Age">Age</label>
+        <div class="col-md-10">
+            <input class="form-control text-box single-line" data-val="true" data-val-number="The field Age must be a number." data-val-range="The field Age must be between 18 and 50." data-val-range-max="50" data-val-range-min="18" id="Age" name="Age" type="number" value="" />
+            <span class="field-validation-valid text-danger" data-valmsg-for="Age" data-valmsg-replace="true"></span>
         </div>
+    </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Job_Title, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Job_Title, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Job_Title, "", new { @class = "text-danger" })
-            </div>
+    <div class="form-group">
+        <label class="control-label col-md-2" for="Job_Title">Job Title</label>
+        <div class="col-md-10">
+            <input class="form-control text-box single-line" id="Job_Title" name="Job_Title" type="text" value="" />
+            <span class="field-validation-valid text-danger" data-valmsg-for="Job_Title" data-valmsg-replace="true"></span>
         </div>
+    </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Gender, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                <div class="checkbox">
-                    @*@Html.EditorFor(model => model.Gender)*@
-                    @Html.DropDownListFor(model => model.Gender, new[] { new SelectListItem { Text = "Male", Value = "true" }, new SelectListItem { Text = "Female", Value = "false" } }, "Select Gender")
+    <div class="form-group">
+        <label class="control-label col-md-2" for="Gender">Gender</label>
+        <div class="col-md-10">
+            <div class="checkbox">
 
-                    @Html.ValidationMessageFor(model => model.Gender, "", new { @class = "text-danger" })
 
-                </div>
-            </div>
-        </div>
 
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
+
+                <select id="Gender" name="Gender">
+                    <option value="">Select Gender</option>
+                    <option value="true">Male</option>
+                    <option value="false">Female</option>
+                </select>
+
+                <span class="field-validation-valid text-danger" data-valmsg-for="Gender" data-valmsg-replace="true"></span>
+
             </div>
         </div>
     </div>
-}
 
+
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Image, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @*@Html.TextBoxFor(model => model.Image, new { type = "file" })*@
+            <input type="File" name="Image"/>
+        </div>
+    </div>
+
+
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.CV, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @*@Html.TextBoxFor(model => model.CV, new { type = "file" })*@
+            <input type="File" name="CV" />
+
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Create" class="btn btn-default" />
+        </div>
+    </div>
+
+</div>
+</form>
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @*@Html.ActionLink("Back to List", "Index")*@
+    <div>
+        <a href="/infoes">Back to List</a>
+    </div>
 </div>
 
 @section Scripts {
