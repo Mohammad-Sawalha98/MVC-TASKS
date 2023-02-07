@@ -1,0 +1,30 @@
+﻿@model Task1_6_Feb.Models.Order
+
+<div>
+    <h4>Order</h4>
+    <hr />
+    <dl class="dl-horizontal">
+
+
+        <dt>
+            Order ID :
+        </dt>
+
+        <dd>
+            @Model.OrderID
+        </dd>
+
+
+        <dt>
+            Order Date :
+        </dt>
+
+        <dd>
+            @Model.OrderDate
+        </dd>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.OrderID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
