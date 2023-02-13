@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="hErrorsModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="hErrorsEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Courses" EntityType="hErrorsModel.Course" />
+    <EntitySet Name="Students" EntityType="hErrorsModel.Student" />
+    <EntitySet Name="StudentCourses" EntityType="hErrorsModel.StudentCourse" />
+    <AssociationSet Name="FK__StudentCo__cours__44FF419A" Association="hErrorsModel.FK__StudentCo__cours__44FF419A">
+      <End Role="Course" EntitySet="Courses" />
+      <End Role="StudentCourse" EntitySet="StudentCourses" />
+    </AssociationSet>
+    <AssociationSet Name="FK__StudentCo__stude__440B1D61" Association="hErrorsModel.FK__StudentCo__stude__440B1D61">
+      <End Role="Student" EntitySet="Students" />
+      <End Role="StudentCourse" EntitySet="StudentCourses" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Course">
+    <Key>
+      <PropertyRef Name="courseID" />
+    </Key>
+    <Property Name="courseID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="courseName" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="StudentCourses" Relationship="hErrorsModel.FK__StudentCo__cours__44FF419A" FromRole="Course" ToRole="StudentCourse" />
+  </EntityType>
+  <EntityType Name="Student">
+    <Key>
+      <PropertyRef Name="studentID" />
+    </Key>
+    <Property Name="studentID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="studentName" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="StudentCourses" Relationship="hErrorsModel.FK__StudentCo__stude__440B1D61" FromRole="Student" ToRole="StudentCourse" />
+  </EntityType>
+  <EntityType Name="StudentCourse">
+    <Key>
+      <PropertyRef Name="studentID" />
+      <PropertyRef Name="courseID" />
+    </Key>
+    <Property Name="studentID" Type="Int32" Nullable="false" />
+    <Property Name="courseID" Type="Int32" Nullable="false" />
+    <Property Name="discription" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Course" Relationship="hErrorsModel.FK__StudentCo__cours__44FF419A" FromRole="StudentCourse" ToRole="Course" />
+    <NavigationProperty Name="Student" Relationship="hErrorsModel.FK__StudentCo__stude__440B1D61" FromRole="StudentCourse" ToRole="Student" />
+  </EntityType>
+  <Association Name="FK__StudentCo__cours__44FF419A">
+    <End Type="hErrorsModel.Course" Role="Course" Multiplicity="1" />
+    <End Type="hErrorsModel.StudentCourse" Role="StudentCourse" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Course">
+        <PropertyRef Name="courseID" />
+      </Principal>
+      <Dependent Role="StudentCourse">
+        <PropertyRef Name="courseID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__StudentCo__stude__440B1D61">
+    <End Type="hErrorsModel.Student" Role="Student" Multiplicity="1" />
+    <End Type="hErrorsModel.StudentCourse" Role="StudentCourse" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Student">
+        <PropertyRef Name="studentID" />
+      </Principal>
+      <Dependent Role="StudentCourse">
+        <PropertyRef Name="studentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>
