@@ -1,0 +1,46 @@
+﻿
+@{
+    ViewBag.Title = "show";
+}
+@*https://localhost:44361/api/Faculties
+https://localhost:44361/Majors/Index/${data[i].id}*@
+
+<h2>show</h2>
+
+
+<div class="col-md-4" id="bodyDiv">
+
+</div>
+
+
+<script>
+    async function read() {
+        try {
+            const api = "https://localhost:44361/api/Faculties";
+            const res = await fetch(api);
+            const data = await res.json();
+
+            console.log(data);
+            readdata(data);
+        } catch (error) {
+            console.log(error);
+        }
+    }
+    function readdata(data) {
+
+        for (let i = 0; i < data.length; i++) {
+
+            document.getElementById('bodyDiv').innerHTML += `<a href="https://localhost:44361/Majors/Index/${data[i].id}"><p>${data[i].name}</p></a>`;
+
+
+        }
+    }
+    read();
+</script>
+
+@*fetch('https://localhost:44361/api/Faculties')
+    .then(response => response.json())
+    .then(data => {
+        console.log(data);
+        data.forEach(one => document.getElementById("div1").innerHTML += `<h2>${one.Facility1}</h2>`)
+    });*@

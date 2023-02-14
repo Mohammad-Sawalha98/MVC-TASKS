@@ -20,7 +20,7 @@ namespace Task_Nine.Controllers
         // GET: Courses
         public ActionResult Index()
         {
-            return View(dba.Courses.ToList());
+            return View(db.Courses.ToList());
         }
 
         // GET: Courses/Details/5
